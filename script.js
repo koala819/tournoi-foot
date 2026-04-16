@@ -13,9 +13,10 @@ form.addEventListener("submit", async (event) => {
   const formData = new FormData(form);
   const lastName = String(formData.get("lastName") || "").trim();
   const firstName = String(formData.get("firstName") || "").trim();
+  const legalGuardianName = String(formData.get("legalGuardianName") || "").trim();
   const ageGroup = String(formData.get("ageGroup") || "").trim();
 
-  if (!lastName || !firstName || !ageGroup) {
+  if (!lastName || !firstName || !legalGuardianName || !ageGroup) {
     showMessage("Merci de remplir tous les champs.");
     return;
   }
@@ -32,6 +33,7 @@ form.addEventListener("submit", async (event) => {
       body: JSON.stringify({
         lastName,
         firstName,
+        legalGuardianName,
         ageGroup
       })
     });

@@ -23,9 +23,11 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { lastName, firstName, ageGroup } = JSON.parse(event.body || "{}");
+    const { lastName, firstName, legalGuardianName, ageGroup } = JSON.parse(
+      event.body || "{}"
+    );
 
-    if (!lastName || !firstName || !ageGroup) {
+    if (!lastName || !firstName || !legalGuardianName || !ageGroup) {
       return json(400, { error: "Tous les champs sont obligatoires." });
     }
 
@@ -57,6 +59,7 @@ exports.handler = async (event) => {
       "",
       `Nom : ${String(lastName).trim()}`,
       `Prenom : ${String(firstName).trim()}`,
+      `Responsable légal : ${String(legalGuardianName).trim()}`,
       `Tranche d'age : ${String(ageGroup).trim()}`,
       "",
       "Mosquee : Al'Ihsane",
