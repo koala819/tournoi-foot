@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription tournoi de foot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <header class="header">
+        <p class="eyebrow">Tournoi de foot enfants</p>
+        <h1>Formulaire d'inscription</h1>
+        <p class="deadline">Date limite d'inscription : <strong>30 avril 2026</strong></p>
+      </header>
+
+      <section class="infos" aria-label="Informations de la mosquée">
+        <div class="info-item">
+          <span class="label">Nom de la mosquée</span>
+          <span class="value">Al'Ihsane</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Responsable de la mosquée</span>
+          <span class="value">Mounir</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Contact</span>
+          <span class="value">06.01.02.03.04</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Mail</span>
+          <span class="value">3cmc@live.fr</span>
+        </div>
+      </section>
+
+      <form id="registration-form" class="form" novalidate>
+        <div class="field">
+          <label for="lastName">Nom</label>
+          <input id="lastName" name="lastName" type="text" placeholder="Nom de l'enfant" required>
+        </div>
+
+        <div class="field">
+          <label for="firstName">Prénom</label>
+          <input id="firstName" name="firstName" type="text" placeholder="Prénom de l'enfant" required>
+        </div>
+
+        <div class="field">
+          <label for="ageGroup">Tranche d'âge</label>
+          <select id="ageGroup" name="ageGroup" required>
+            <option value="">Choisir une tranche d'âge</option>
+            <option value="6 à 7 ans">6 à 7 ans</option>
+            <option value="8 à 10 ans">8 à 10 ans</option>
+            <option value="11 à 13 ans">11 à 13 ans</option>
+            <option value="14 à 17 ans">14 à 17 ans</option>
+          </select>
+        </div>
+
+        <p id="message" class="message" aria-live="polite"></p>
+
+        <button type="submit" class="submit-button">Envoyer l'inscription</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
