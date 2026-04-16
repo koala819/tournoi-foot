@@ -3,64 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inscription tournoi de foot</title>
+  <title>Inscription — Tournoi de foot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="page">
-    <section class="card">
-      <header class="header">
-        <p class="eyebrow">Tournoi de foot enfants</p>
-        <h1>Formulaire d'inscription</h1>
-        <p class="deadline">Date limite d'inscription : <strong>30 avril 2026</strong></p>
-      </header>
+    <div class="layout">
+      <aside class="hero" aria-label="Illustration du maillot de l’école">
+        <div class="hero__frame">
+          <img
+            class="hero__img"
+            src="picture.jpeg"
+            width="640"
+            height="800"
+            alt="Maillot officiel 3CMC — École Al-Ihsane de Colomiers"
+            loading="eager"
+            decoding="async"
+          >
+          <div class="hero__stripe" aria-hidden="true"></div>
+        </div>
+      </aside>
 
-      <section class="infos" aria-label="Informations de la mosquée">
-        <div class="info-item">
-          <span class="label">Nom de la mosquée</span>
-          <span class="value">Al'Ihsane</span>
-        </div>
-        <div class="info-item">
-          <span class="label">Responsable de la mosquée</span>
-          <span class="value">Mounir</span>
-        </div>
-        <div class="info-item">
-          <span class="label">Contact</span>
-          <span class="value">06.01.02.03.04</span>
-        </div>
-        <div class="info-item">
-          <span class="label">Mail</span>
-          <span class="value">3cmc@live.fr</span>
-        </div>
-      </section>
+      <div class="content">
+        <section class="card">
+          <header class="header">
+            <p class="eyebrow">Tournoi de foot enfants</p>
+            <h1>Formulaire d’inscription</h1>
+            <p class="deadline">Date limite d’inscription : <strong>30 avril 2026</strong></p>
+          </header>
 
-      <form id="registration-form" class="form" novalidate>
-        <div class="field">
-          <label for="lastName">Nom</label>
-          <input id="lastName" name="lastName" type="text" placeholder="Nom de l'enfant" required>
-        </div>
+          <section class="event" aria-label="Date, horaires et lieu du tournoi">
+            <p class="event__line event__line--when">
+              <span class="event__label">Quand</span>
+              <span class="event__value">Le <strong>dimanche 17 mai 2026</strong>, de <strong>09h00 à 17h30</strong></span>
+            </p>
+            <p class="event__line event__line--where">
+              <span class="event__label">Où</span>
+              <span class="event__value">Au <strong>Stade Colette Besson</strong> («&nbsp;RC Muret&nbsp;»), <strong>40 avenue Pierre d’Aragon</strong>, <strong>31600 Muret</strong></span>
+            </p>
+          </section>
 
-        <div class="field">
-          <label for="firstName">Prénom</label>
-          <input id="firstName" name="firstName" type="text" placeholder="Prénom de l'enfant" required>
-        </div>
+          <section class="infos" aria-label="Coordonnées de l’organisateur">
+            <div class="info-item info-item--wide">
+              <span class="label">Nom</span>
+              <span class="value">3CMC — École Al-Ihsane de Colomiers</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Responsable de l’école</span>
+              <span class="value">BEGRICHE Mounir</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Responsable de la section sportive</span>
+              <span class="value">Agzenai Mohamed</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Contact</span>
+              <span class="value"><a href="tel:+33619910191">06&nbsp;19&nbsp;91&nbsp;01&nbsp;91</a></span>
+            </div>
+            <div class="info-item">
+              <span class="label">Mail</span>
+              <span class="value"><a href="mailto:3cmc@live.fr">3cmc@live.fr</a></span>
+            </div>
+          </section>
 
-        <div class="field">
-          <label for="ageGroup">Tranche d'âge</label>
-          <select id="ageGroup" name="ageGroup" required>
-            <option value="">Choisir une tranche d'âge</option>
-            <option value="6 à 7 ans">6 à 7 ans</option>
-            <option value="8 à 10 ans">8 à 10 ans</option>
-            <option value="11 à 13 ans">11 à 13 ans</option>
-            <option value="14 à 17 ans">14 à 17 ans</option>
-          </select>
-        </div>
+          <section class="schedule" aria-labelledby="schedule-title">
+            <h2 id="schedule-title" class="schedule__title">Déroulement de la journée</h2>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__time">09h00</span>
+                <span class="timeline__text">Accueil des équipes</span>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__time">09h20</span>
+                <span class="timeline__text">Point avec les éducateurs et les coachs</span>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__time">09h30 – 12h30</span>
+                <span class="timeline__text">Phases de poules</span>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__time">12h00 – 13h30</span>
+                <span class="timeline__text">Pause repas</span>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__time">14h00</span>
+                <span class="timeline__text">Prière Dhuhr (sur place)</span>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__time">14h15 – 16h45</span>
+                <span class="timeline__text">Phases finales</span>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__time">17h00 – 17h30</span>
+                <span class="timeline__text">Remise des récompenses</span>
+              </li>
+              <li class="timeline__item timeline__item--note">
+                <span class="timeline__time">18h00</span>
+                <span class="timeline__text">Salat Asr à la mosquée El Badr</span>
+              </li>
+            </ol>
+          </section>
 
-        <p id="message" class="message" aria-live="polite"></p>
+          <form id="registration-form" class="form" novalidate>
+            <div class="field">
+              <label for="lastName">Nom</label>
+              <input id="lastName" name="lastName" type="text" placeholder="Nom de l’enfant" required>
+            </div>
 
-        <button type="submit" class="submit-button">Envoyer l'inscription</button>
-      </form>
-    </section>
+            <div class="field">
+              <label for="firstName">Prénom</label>
+              <input id="firstName" name="firstName" type="text" placeholder="Prénom de l’enfant" required>
+            </div>
+
+            <div class="field">
+              <label for="ageGroup">Tranche d’âge</label>
+              <select id="ageGroup" name="ageGroup" required>
+                <option value="">Choisir une tranche d’âge</option>
+                <option value="6 à 7 ans">6 à 7 ans</option>
+                <option value="8 à 10 ans">8 à 10 ans</option>
+                <option value="11 à 13 ans">11 à 13 ans</option>
+                <option value="14 à 17 ans">14 à 17 ans</option>
+              </select>
+            </div>
+
+            <p id="message" class="message" aria-live="polite"></p>
+
+            <button type="submit" class="submit-button">Envoyer l’inscription</button>
+          </form>
+        </section>
+      </div>
+    </div>
   </main>
 
   <script src="script.js"></script>
