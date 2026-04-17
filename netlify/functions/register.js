@@ -23,11 +23,17 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { lastName, firstName, legalGuardianName, ageGroup } = JSON.parse(
+    const {
+      lastName,
+      firstName,
+      legalGuardianLastName,
+      legalGuardianFirstName,
+      ageGroup
+    } = JSON.parse(
       event.body || "{}"
     );
 
-    if (!lastName || !firstName || !legalGuardianName || !ageGroup) {
+    if (!lastName || !firstName || !legalGuardianLastName || !legalGuardianFirstName || !ageGroup) {
       return json(400, { error: "Tous les champs sont obligatoires." });
     }
 
@@ -59,7 +65,8 @@ exports.handler = async (event) => {
       "",
       `Nom : ${String(lastName).trim()}`,
       `Prenom : ${String(firstName).trim()}`,
-      `Responsable légal : ${String(legalGuardianName).trim()}`,
+      `Responsable légal (nom) : ${String(legalGuardianLastName).trim()}`,
+      `Responsable légal (prenom) : ${String(legalGuardianFirstName).trim()}`,
       `Tranche d'age : ${String(ageGroup).trim()}`,
       "",
       "Mosquee : Al'Ihsane",

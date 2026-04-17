@@ -57,7 +57,7 @@
             </div>
             <div class="info-item">
               <span class="label">Responsable de la section sportive</span>
-              <span class="value">Mohamed AGZENAI</span>
+              <span class="value">Mohamed AGZENNAI</span>
             </div>
             <div class="info-item">
               <span class="label">Contact</span>
@@ -119,8 +119,13 @@
             </div>
 
             <div class="field">
-              <label for="legalGuardianName">Nom du responsable légal de l’enfant</label>
-              <input id="legalGuardianName" name="legalGuardianName" type="text" placeholder="Nom du responsable légal" required>
+              <label for="legalGuardianLastName">Nom du responsable légal de l’enfant</label>
+              <input id="legalGuardianLastName" name="legalGuardianLastName" type="text" placeholder="Nom du responsable légal" required>
+            </div>
+
+            <div class="field">
+              <label for="legalGuardianFirstName">Prénom du responsable légal de l’enfant</label>
+              <input id="legalGuardianFirstName" name="legalGuardianFirstName" type="text" placeholder="Prénom du responsable légal" required>
             </div>
 
             <div class="field">
@@ -138,6 +143,14 @@
 
             <button type="submit" class="submit-button">Envoyer l’inscription</button>
           </form>
+
+          <dialog id="success-dialog" class="dialog" aria-labelledby="success-dialog-title">
+            <div class="dialog__content">
+              <h2 id="success-dialog-title" class="dialog__title">Inscription envoyée</h2>
+              <p class="dialog__text">Votre inscription a bien été enregistrée.</p>
+              <button id="success-dialog-ok" type="button" class="dialog__button">OK</button>
+            </div>
+          </dialog>
         </section>
       </div>
     </div>
