@@ -60,20 +60,11 @@ exports.handler = async (event) => {
     });
 
     const mailText = [
-      "Nouvelle inscription au tournoi de foot",
-      "",
       `Nom : ${String(lastName).trim()}`,
-      `Prenom : ${String(firstName).trim()}`,
-      `Responsable légal (nom) : ${String(legalGuardianLastName).trim()}`,
-      `Responsable légal (prenom) : ${String(legalGuardianFirstName).trim()}`,
-      `Tranche d'age : ${String(ageGroup).trim()}`,
-      "",
-      "Mosquee : Al'Ihsane",
-      "Responsable : Mounir",
-      "Contact : 06.01.02.03.04",
-      "Mail : 3cmc@live.fr",
-      "",
-      "Date limite d'inscription : 30 avril 2026"
+      `Prénom : ${String(firstName).trim()}`,
+      `NOM Responsable légal : ${String(legalGuardianLastName).trim()}`,
+      `Prénom Responsable légal : ${String(legalGuardianFirstName).trim()}`,
+      `Tranche d'âge : ${String(ageGroup).trim()}`
     ].join("\n");
 
     await transporter.sendMail({
