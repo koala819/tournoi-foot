@@ -42,8 +42,7 @@ exports.handler = async (event) => {
       SMTP_PORT,
       SMTP_USER,
       SMTP_PASS,
-      MAIL_TO,
-      MAIL_FROM
+      MAIL_TO
     } = process.env;
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !MAIL_TO) {
@@ -78,7 +77,7 @@ exports.handler = async (event) => {
     ].join("\n");
 
     await transporter.sendMail({
-      from: MAIL_FROM || SMTP_USER,
+      from: SMTP_USER,
       to: MAIL_TO,
       subject: "Nouvelle inscription tournoi de foot",
       text: mailText
