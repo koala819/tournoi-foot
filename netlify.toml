@@ -1,3 +1,9 @@
 [build]
   functions = "netlify/functions"
 
+# Évite l’erreur YouTube 153 en intégration : le lecteur exige un référent cohérent.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+

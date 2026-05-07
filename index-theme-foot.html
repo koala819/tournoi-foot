@@ -3,30 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Inscription — Sortie promenade</title>
+  <title>Inscription — Tournoi de foot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-theme-foot.css">
 </head>
 <body>
   <main class="page">
     <div class="layout">
-      <aside class="hero" aria-label="Vidéo de présentation">
+      <aside class="hero" aria-label="Illustration du maillot de l’école">
         <div class="hero__frame">
-          <div class="hero__embed-wrap">
-            <!-- Depuis https://www.youtube.com/watch?v=WhhHKyJL7xU → intégration officielle /embed/… -->
-            <iframe
-              class="hero__embed"
-              src="https://www.youtube.com/embed/WhhHKyJL7xU"
-              title="Vidéo YouTube — présentation de la sortie"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
+          <img
+            class="hero__img"
+            src="picture.jpeg"
+            width="640"
+            height="800"
+            alt="Maillot officiel 3CMC — École Al-Ihsane de Colomiers"
+            loading="eager"
+            decoding="async"
+          >
           <div class="hero__stripe" aria-hidden="true"></div>
         </div>
       </aside>
@@ -34,19 +30,19 @@
       <div class="content">
         <section class="card">
           <header class="header">
-            <p class="eyebrow">Sortie promenade — famille</p>
+            <p class="eyebrow">Tournoi de foot enfants</p>
             <h1>Formulaire d’inscription</h1>
             <p class="deadline">Date limite d’inscription : <strong>30 avril 2026</strong></p>
           </header>
 
-          <section class="event" aria-label="Date, horaires et lieu de la sortie">
+          <section class="event" aria-label="Date, horaires et lieu du tournoi">
             <p class="event__line event__line--when">
               <span class="event__label">Quand</span>
-              <span class="event__value">Le <strong>dimanche 17 mai 2026</strong>, de <strong>09h00 à 17h30</strong> — <em>horaires indicatifs</em></span>
+              <span class="event__value">Le <strong>dimanche 17 mai 2026</strong>, de <strong>09h00 à 17h30</strong></span>
             </p>
             <p class="event__line event__line--where">
               <span class="event__label">Où</span>
-              <span class="event__value">Point de rendez-vous et itinéraire : <strong>à préciser par l’organisateur</strong></span>
+              <span class="event__value">Au <strong>Stade Colette Besson</strong> («&nbsp;RC Muret&nbsp;»), <strong>40 avenue Pierre d’Aragon</strong>, <strong>31600 Muret</strong></span>
             </p>
           </section>
 
@@ -78,31 +74,31 @@
             <ol class="timeline">
               <li class="timeline__item">
                 <span class="timeline__time">09h00</span>
-                <span class="timeline__text">Accueil et vérification des présences</span>
+                <span class="timeline__text">Accueil des équipes</span>
               </li>
               <li class="timeline__item">
                 <span class="timeline__time">09h20</span>
-                <span class="timeline__text">Briefing sécurité et rappel du parcours</span>
+                <span class="timeline__text">Point avec les éducateurs et les coachs</span>
               </li>
               <li class="timeline__item">
                 <span class="timeline__time">09h30 – 12h30</span>
-                <span class="timeline__text">Marche / randonnée (allure adaptée au groupe)</span>
+                <span class="timeline__text">Phases de poules</span>
               </li>
               <li class="timeline__item">
                 <span class="timeline__time">12h00 – 13h30</span>
-                <span class="timeline__text">Pause pique-nique</span>
+                <span class="timeline__text">Pause repas</span>
               </li>
               <li class="timeline__item">
                 <span class="timeline__time">14h00</span>
-                <span class="timeline__text">Prière Dhuhr (selon le lieu)</span>
+                <span class="timeline__text">Prière Dhuhr (sur place)</span>
               </li>
               <li class="timeline__item">
                 <span class="timeline__time">14h15 – 16h45</span>
-                <span class="timeline__text">Suite du parcours ou temps libre encadré</span>
+                <span class="timeline__text">Phases finales</span>
               </li>
               <li class="timeline__item">
                 <span class="timeline__time">17h00 – 17h30</span>
-                <span class="timeline__text">Retour au point de rendez-vous, fin de la sortie</span>
+                <span class="timeline__text">Remise des récompenses</span>
               </li>
               <li class="timeline__item timeline__item--note">
                 <span class="timeline__time">18h00</span>
