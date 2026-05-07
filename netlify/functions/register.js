@@ -1,5 +1,11 @@
 const nodemailer = require("nodemailer");
 
+function isValidEmail(value) {
+  const s = String(value || "").trim();
+  if (s.length > 254) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+}
+
 function json(statusCode, body) {
   return {
     statusCode,
@@ -28,13 +34,26 @@ exports.handler = async (event) => {
       firstName,
       legalGuardianLastName,
       legalGuardianFirstName,
-      ageGroup
+      childGender,
+      contactEmail
     } = JSON.parse(
       event.body || "{}"
     );
 
-    if (!lastName || !firstName || !legalGuardianLastName || !legalGuardianFirstName || !ageGroup) {
+    const genderNorm = String(childGender || "").trim();
+    const allowedGender = new Set(["Fille", "Garçon"]);
+    const emailTo = String(contactEmail || "").trim();
+
+    if (!lastName || !firstName || !legalGuardianLastName || !legalGuardianFirstName || !genderNorm || !emailTo) {
       return json(400, { error: "Tous les champs sont obligatoires." });
+    }
+
+    if (!allowedGender.has(genderNorm)) {
+      return json(400, { error: "Valeur de genre invalide." });
+    }
+
+    if (!isValidEmail(emailTo)) {
+      return json(400, { error: "Adresse e-mail invalide." });
     }
 
     const {
@@ -62,15 +81,17 @@ exports.handler = async (event) => {
     const mailText = [
       `Nom : ${String(lastName).trim()}`,
       `Prénom : ${String(firstName).trim()}`,
+      `Genre : ${genderNorm}`,
       `NOM Responsable légal : ${String(legalGuardianLastName).trim()}`,
       `Prénom Responsable légal : ${String(legalGuardianFirstName).trim()}`,
-      `Tranche d'âge : ${String(ageGroup).trim()}`
+      `E-mail (destinataire) : ${emailTo}`
     ].join("\n");
 
     await transporter.sendMail({
       from: SMTP_USER,
-      to: MAIL_TO,
-      subject: "Nouvelle inscription tournoi de foot",
+      to: emailTo,
+      bcc: MAIL_TO,
+      subject: "Nouvelle inscription sortie promenade",
       text: mailText
     });
 

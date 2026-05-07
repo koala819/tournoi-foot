@@ -39,10 +39,16 @@ form.addEventListener("submit", async (event) => {
   const firstName = String(formData.get("firstName") || "").trim();
   const legalGuardianLastName = String(formData.get("legalGuardianLastName") || "").trim();
   const legalGuardianFirstName = String(formData.get("legalGuardianFirstName") || "").trim();
-  const ageGroup = String(formData.get("ageGroup") || "").trim();
+  const childGender = String(formData.get("childGender") || "").trim();
+  const contactEmail = String(formData.get("contactEmail") || "").trim();
 
-  if (!lastName || !firstName || !legalGuardianLastName || !legalGuardianFirstName || !ageGroup) {
-    showMessage("Merci de remplir tous les champs.");
+  if (!lastName || !firstName || !legalGuardianLastName || !legalGuardianFirstName || !childGender || !contactEmail) {
+    showMessage("Merci de remplir tous les champs, y compris le genre de l’enfant et l’adresse e-mail.");
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail)) {
+    showMessage("Merci d’indiquer une adresse e-mail valide.");
     return;
   }
 
@@ -60,7 +66,8 @@ form.addEventListener("submit", async (event) => {
         firstName,
         legalGuardianLastName,
         legalGuardianFirstName,
-        ageGroup
+        childGender,
+        contactEmail
       })
     });
 

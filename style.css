@@ -140,6 +140,48 @@ body {
   padding-top: 6px;
 }
 
+.header__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.header__logo {
+  display: block;
+  max-height: clamp(72px, 20vw, 112px);
+  width: auto;
+  max-width: min(200px, 55vw);
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  background: var(--white);
+  padding: 8px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 28px rgba(25, 100, 80, 0.1);
+}
+
+.header__intro {
+  min-width: 0;
+  flex: 1;
+  width: 100%;
+}
+
+@media (min-width: 540px) {
+  .header__brand {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 22px;
+  }
+
+  .header__logo {
+    max-height: clamp(88px, 14vw, 120px);
+    max-width: min(180px, 32vw);
+  }
+}
+
 .eyebrow {
   margin: 0 0 10px;
   color: var(--gold);
@@ -368,6 +410,75 @@ h1 {
 .field {
   display: grid;
   gap: 8px;
+}
+
+.field--radios {
+  gap: 12px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.field__legend {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: rgba(26, 61, 53, 0.92);
+  padding: 0;
+  margin: 0 0 4px;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.radio-tile {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 18px;
+  min-height: 48px;
+  border-radius: 14px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.radio-tile:hover {
+  border-color: rgba(42, 143, 111, 0.45);
+}
+
+.radio-tile:has(:focus-visible) {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-soft);
+}
+
+.radio-tile:has(:checked) {
+  border-color: var(--gold);
+  background: rgba(42, 143, 111, 0.08);
+  box-shadow: 0 0 0 1px var(--gold-soft);
+}
+
+.radio-tile input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  min-height: unset;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--gold);
+  flex-shrink: 0;
+}
+
+.radio-tile__text {
+  line-height: 1.2;
 }
 
 label {

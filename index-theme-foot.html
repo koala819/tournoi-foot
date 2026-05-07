@@ -118,6 +118,20 @@
               <input id="firstName" name="firstName" type="text" placeholder="Prénom de l’enfant" required>
             </div>
 
+            <fieldset class="field field--radios">
+              <legend class="field__legend">Genre de l’enfant</legend>
+              <div class="radio-group" role="presentation">
+                <label class="radio-tile">
+                  <input type="radio" name="childGender" value="Fille" required>
+                  <span class="radio-tile__text">Fille</span>
+                </label>
+                <label class="radio-tile">
+                  <input type="radio" name="childGender" value="Garçon">
+                  <span class="radio-tile__text">Garçon</span>
+                </label>
+              </div>
+            </fieldset>
+
             <div class="field">
               <label for="legalGuardianLastName">Nom du responsable légal de l’enfant</label>
               <input id="legalGuardianLastName" name="legalGuardianLastName" type="text" placeholder="Nom du responsable légal" required>
@@ -129,14 +143,16 @@
             </div>
 
             <div class="field">
-              <label for="ageGroup">Tranche d’âge</label>
-              <select id="ageGroup" name="ageGroup" required>
-                <option value="">Choisir une tranche d’âge</option>
-                <option value="6 à 7 ans">6 à 7 ans</option>
-                <option value="8 à 10 ans">8 à 10 ans</option>
-                <option value="11 à 13 ans">11 à 13 ans</option>
-                <option value="14 à 17 ans">14 à 17 ans</option>
-              </select>
+              <label for="contactEmail">Adresse e-mail</label>
+              <input
+                id="contactEmail"
+                name="contactEmail"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="exemple@domaine.fr"
+                required
+              >
             </div>
 
             <p id="message" class="message" aria-live="polite"></p>
